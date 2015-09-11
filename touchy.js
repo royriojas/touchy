@@ -56,6 +56,21 @@ tapProto._getClientY = function ( e ) {
   return e.clientY;
 };
 
+tapProto._getPageX = function ( e ) {
+  if ( e.touches && e.touches.length > 0 ) {
+    return e.touches[ 0 ].pageX;
+  }
+  return e.pageX;
+};
+
+tapProto._getPageY = function ( e ) {
+  if ( e.touches && e.touches.length > 0 ) {
+    return e.touches[ 0 ].pageY;
+  }
+  return e.pageY;
+};
+
+
 tapProto.start = function ( e ) {
   var me = this;
 
@@ -67,14 +82,14 @@ tapProto.start = function ( e ) {
     ele.addEventListener( 'touchmove', me, false );
     ele.addEventListener( 'touchend', me, false );
     ele.addEventListener( 'touchcancel', me, false );
-    me.checkForTaphold();
+    me.checkForTaphold( e );
     me.blockMouseEvents();
   }
 
   if ( e.type === 'mousedown' && me._mouseEventsAllowed ) {
     ele.addEventListener( 'mousemove', me, false );
     ele.addEventListener( 'mouseup', me, false );
-    me.checkForTaphold();
+    me.checkForTaphold( e );
   }
 
   me.startTarget = e.target;
@@ -87,7 +102,7 @@ tapProto.start = function ( e ) {
 
 };
 
-tapProto.checkForTaphold = function () {
+tapProto.checkForTaphold = function ( e ) {
   var me = this;
 
   if ( !me._opts.taphold ) {
@@ -104,7 +119,11 @@ tapProto.checkForTaphold = function () {
 
     eventHelper.fire( me.startTarget, 'tap:hold', {
       bubbles: true,
-      cancelable: true
+      cancelable: true,
+      detail: {
+        pageX: me._getPageX( e ),
+        pageY: me._getPageY( e )
+      }
     } );
   }, me._opts.tapHoldMinThreshold );
 };
@@ -149,7 +168,11 @@ tapProto.end = function ( e ) {
     if ( me._opts.tap ) {
       eventHelper.fire( target, 'tap', {
         bubbles: true,
-        cancelable: true
+        cancelable: true,
+        detail: {
+          pageX: me._getPageX( e ),
+          pageY: me._getPageY( e )
+        }
       } );
     }
 
