@@ -20,6 +20,12 @@
     "bundle": "persistify demo.js -o dist/bundle.js",
     "bundle:watch": "persistify demo.js -o dist/bundle.js --watch"
   },
+  "precommit": [
+    "npm run verify --silent"
+  ],
+  "prepush": [
+    "npm run verify --silent"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/royriojas/touchy.git"
