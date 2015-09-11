@@ -1,6 +1,6 @@
 {
   "name": "touchy",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Yet another tap, tap:hold and swipe events enabler. Based on xtap-event/tap.js",
   "main": "index.js",
   "scripts": {
