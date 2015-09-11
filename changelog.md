@@ -1,5 +1,10 @@
 
 # touchy - Changelog
+## v0.1.3
+- **Features**
+  - tap/swipe/taphold can be disabled/enabled on the fly - [da3d736]( https://github.com/royriojas/touchy/commit/da3d736 ), [royriojas](https://github.com/royriojas), 10/09/2015 22:24:11
+
+    
 ## v0.1.2
 - **Build Scripts Changes**
   - Add prepush/precommit config section - [ad03ab6]( https://github.com/royriojas/touchy/commit/ad03ab6 ), [royriojas](https://github.com/royriojas), 10/09/2015 22:03:52
