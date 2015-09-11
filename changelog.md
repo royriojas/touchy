@@ -1,5 +1,10 @@
 
 # touchy - Changelog
+## v0.1.4
+- **Bug Fixes**
+  - pass the info about the pageX, pageY coords in the detail object - [55b0a2e]( https://github.com/royriojas/touchy/commit/55b0a2e ), [royriojas](https://github.com/royriojas), 11/09/2015 00:45:08
+
+    
 ## v0.1.3
 - **Features**
   - tap/swipe/taphold can be disabled/enabled on the fly - [da3d736]( https://github.com/royriojas/touchy/commit/da3d736 ), [royriojas](https://github.com/royriojas), 10/09/2015 22:24:11
