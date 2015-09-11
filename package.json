@@ -1,0 +1,59 @@
+{
+  "name": "touchy",
+  "version": "0.0.1",
+  "description": "Yet another tap, tap:hold and swipe events enabler. Based on xtap-event/tap.js",
+  "main": "index.js",
+  "scripts": {
+    "beautify": "esbeautifier 'index.js' 'touchy.js' 'specs/**/*.js'",
+    "beautify-check": "esbeautifier -k 'index.js' 'touchy.js' 'specs/**/*.js'",
+    "eslint": "eslinter 'index.js' 'touchy.js' 'specs/**/*.js'",
+    "lint": "npm run beautify && npm run eslint",
+    "verify": "npm run beautify-check && npm run eslint",
+    "install-hooks": "prepush install && changelogx install-hook && precommit install",
+    "changelog": "changelogx -f markdown -o ./changelog.md",
+    "do-changelog": "npm run changelog && git add ./changelog.md && git commit -m 'DOC: Generate changelog' --no-verify",
+    "pre-v": "npm run verify",
+    "post-v": "npm run do-changelog && git push --no-verify && git push --tags --no-verify",
+    "bump-major": "npm run pre-v && npm version major -m 'BLD: Release v%s' && npm run post-v",
+    "bump-minor": "npm run pre-v && npm version minor -m 'BLD: Release v%s' && npm run post-v",
+    "bump-patch": "npm run pre-v && npm version patch -m 'BLD: Release v%s' && npm run post-v",
+    "bundle": "persistify demo.js -o dist/bundle.js",
+    "bundle:watch": "persistify demo.js -o dist/bundle.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/royriojas/tap.js.git"
+  },
+  "keywords": [
+    "javascript",
+    "tap",
+    "touch",
+    "event",
+    "swipe",
+    "tap:hold",
+    "swipe:up",
+    "swipe:down",
+    "swipe:left",
+    "swipe:right"
+  ],
+  "author": "royriojas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/royriojas/touchy/issues"
+  },
+  "homepage": "https://github.com/royriojas/touchy",
+  "dependencies": {
+    "dom-event-special": "^0.1.6",
+    "extend": "^3.0.0",
+    "debouncy": "^1.0.4"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "changelogx": "^1.0.18",
+    "esbeautifier": "^4.2.11",
+    "eslinter": "^2.3.3",
+    "persistify": "^0.2.0",
+    "precommit": "^1.1.5",
+    "prepush": "^3.1.4"
+  }
+}

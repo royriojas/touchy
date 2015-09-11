@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Tap.js demo</title>
+<meta name="description" content="" />
+<meta name="author" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<style>
+button {
+    width: 100px;
+    height: 44px;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#container {
+  background: #eee;
+  height: 400px;
+}
+</style>
+
+</head>
+<body>
+  <div id="container">
+    <button id="button-1">click event</button>
+    <button id="button-2">tap event</button>
+    <button id="button-3">taphold event</button>
+  </div>
+
+  <div id="output"></div>
+  <script src="dist/bundle.js"></script>
+</body>
+</html>
