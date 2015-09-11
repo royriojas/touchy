@@ -1,7 +1,7 @@
 module.exports = {
-  enableOn: function ( el ) {
+  enableOn: function ( el, opts ) {
     var Tap = require( './touchy' );
-    var ins = new Tap( el );
+    var ins = new Tap( el, opts );
     return ins;
   }
 };

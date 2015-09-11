@@ -8,6 +8,7 @@ function Touchy( el, opts ) {
   me._opts = {
     minSwipeDeltaX: 25,
     minSwipeDeltaY: 25,
+    tap: true,
     taphold: true,
     swipe: true,
     minTapDisplacementTolerance: 10,
@@ -88,6 +89,11 @@ tapProto.start = function ( e ) {
 
 tapProto.checkForTaphold = function () {
   var me = this;
+
+  if ( !me._opts.taphold ) {
+    return;
+  }
+
   clearTimeout( me.tapHoldInterval );
 
   me.tapHoldInterval = setTimeout( function () {
@@ -140,10 +146,12 @@ tapProto.end = function ( e ) {
       return;
     }
 
-    eventHelper.fire( target, 'tap', {
-      bubbles: true,
-      cancelable: true
-    } );
+    if ( me._opts.tap ) {
+      eventHelper.fire( target, 'tap', {
+        bubbles: true,
+        cancelable: true
+      } );
+    }
 
     return;
   }
