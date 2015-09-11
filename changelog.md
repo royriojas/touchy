@@ -1,5 +1,14 @@
 
 # touchy - Changelog
+## v0.1.2
+- **Build Scripts Changes**
+  - Add prepush/precommit config section - [ad03ab6]( https://github.com/royriojas/touchy/commit/ad03ab6 ), [royriojas](https://github.com/royriojas), 10/09/2015 22:03:52
+
+    
+- **Documentation**
+  - Add npm badge - [1edb017]( https://github.com/royriojas/touchy/commit/1edb017 ), [royriojas](https://github.com/royriojas), 10/09/2015 22:02:27
+
+    
 ## v0.1.1
 - **Bug Fixes**
   - Fix repo url - [a6e5606]( https://github.com/royriojas/touchy/commit/a6e5606 ), [royriojas](https://github.com/royriojas), 10/09/2015 21:23:22
