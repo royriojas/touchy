@@ -1,3 +1,5 @@
+[![NPM Version](http://img.shields.io/npm/v/touchy.svg?style=flat)](https://npmjs.org/package/touchy)
+
 # touchy
 
 Yet another `tap`, `tap:hold` and `swipe` events enabler. Based on
