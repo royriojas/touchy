@@ -14,7 +14,8 @@ function Touchy( el, opts ) {
     minTapDisplacementTolerance: 10,
     tapHoldMinThreshold: 500,
     swipeThreshold: 1000,
-    mousedownThreshold: 500
+    mousedownThreshold: 500,
+    discardTapholdIfMove: true
   };
 
   extend( me._opts, opts );
@@ -113,7 +114,7 @@ tapProto.checkForTaphold = function ( e ) {
 
   me.tapHoldInterval = setTimeout( function () {
 
-    if ( me.moved || !me.handlingStart || !me._opts.taphold ) {
+    if ( (me.moved && me._opts.discardTapholdIfMove) || !me.handlingStart || !me._opts.taphold ) {
       return;
     }
 
