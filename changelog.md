@@ -1,5 +1,10 @@
 
 # touchy - Changelog
+## v0.1.5
+- **Enhancements**
+  - make taphold to also be generated if the user moves the finger - [7c60713]( https://github.com/royriojas/touchy/commit/7c60713 ), [royriojas](https://github.com/royriojas), 15/09/2015 14:46:40
+
+    
 ## v0.1.4
 - **Bug Fixes**
   - pass the info about the pageX, pageY coords in the detail object - [55b0a2e]( https://github.com/royriojas/touchy/commit/55b0a2e ), [royriojas](https://github.com/royriojas), 11/09/2015 00:45:08
