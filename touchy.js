@@ -87,7 +87,7 @@ tapProto.start = function ( e ) {
     me.blockMouseEvents();
   }
 
-  if ( e.type === 'mousedown' && me._mouseEventsAllowed ) {
+  if ( e.type === 'mousedown' && me._mouseEventsAllowed && (e.which === 1 || e.button === 0) ) {
     ele.addEventListener( 'mousemove', me, false );
     ele.addEventListener( 'mouseup', me, false );
     me.checkForTaphold( e );
